@@ -1,13 +1,23 @@
 import React from 'react';  //引入一些库  引入可以不用  
 import ReactDOM from 'react-dom';
 import './index.css';
-import ShowTime from './ShowTime'; //引入文件  文件夹才有用
+import ShowTime from './ShowTime'; //引入文件  文件夹才有用 引入了才有用
 import Todolist from './Todolist/Todolist';
 import Request  from './Request'; //引入request 写request
+import Parent from './Context/Parent';
+import Hoc from './Hoc/Hoc';
 // 组件交互
 // 父组件--->子组件：调用时在子组件上添加属性
 // 在子组件中通过props获取数据
-ReactDOM.render(<Request/>,document.getElementById('root'));
+// let {Provider,Comsumer} = React.createContext();
+import {con} from './Context/Context';
+let color = 'red';
+//redux 
+ReactDOM.render(<con.Provider value={color}>
+                    <Hoc/>
+                </con.Provider>
+    ,document.getElementById('root'));
+// ReactDOM.render(<Request/>,document.getElementById('root'));
 //<Request/>组件更换 页面输出换一下  手动更换 需要的话 就引入
 //想看哪一部分  就对此进行更换
 

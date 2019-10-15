@@ -3,7 +3,7 @@ import Axios from 'axios';
 export default class Request extends Component {
     constructor(){
         super();
-        this.state = {
+        this.state = { //状态
             data:[]
         }
     }
@@ -15,7 +15,7 @@ export default class Request extends Component {
             return res.json();
         })    
         .then((res)=>{
-            this.setState({
+            this.setState({ //
                 data:res.result
             })
             console.log(res);
