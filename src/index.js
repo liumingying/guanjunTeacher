@@ -5,23 +5,30 @@ import ShowTime from './ShowTime'; //引入文件  文件夹才有用 引入了�
 import Todolist from './Todolist/Todolist';
 import Request  from './Request'; //引入request 写request
 import Parent from './Context/Parent';
+import Protals from './Portal/Portals'
 import Hoc from './Hoc/Hoc';
+import Homework from './Homework/Todolist2';
 // 组件交互
 // 父组件--->子组件：调用时在子组件上添加属性
 // 在子组件中通过props获取数据
 // let {Provider,Comsumer} = React.createContext();
 import {con} from './Context/Context';
+import ParentProtal from './Portal/ParentProtal';
+import App from './App';
 let color = 'red';
 //redux 
-ReactDOM.render(<con.Provider value={color}>
-                    <Hoc/>
-                </con.Provider>
-    ,document.getElementById('root'));
 // ReactDOM.render(<Request/>,document.getElementById('root'));
 //<Request/>组件更换 页面输出换一下  手动更换 需要的话 就引入
 //想看哪一部分  就对此进行更换
+ReactDOM.render(<Homework/>,
+    document.getElementById('root') );
+    // <App/>
+    // <Homework/>
 
-
+{/* <con.Provider value={color}>
+                    <ParentProtal/>
+                </con.Provider>
+    ,document.getElementById('root') */}
 
 // 函数定义组件（无生命周期函数）
 // 当只是渲染结构时
